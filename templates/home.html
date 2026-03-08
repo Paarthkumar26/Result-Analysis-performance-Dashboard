@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Analysis System</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#1f3c88,#39a0ed);
+        }
+
+        .container{
+            background:white;
+            padding:40px;
+            border-radius:16px;
+            box-shadow:0 8px 24px rgba(0,0,0,0.2);
+            text-align:center;
+            width:420px;
+        }
+
+        h1{
+            margin-bottom:10px;
+            color:#1f3c88;
+        }
+
+        p{
+            margin-bottom:25px;
+            color:#555;
+        }
+
+        .btn{
+            display:block;
+            width:100%;
+            text-decoration:none;
+            padding:14px;
+            margin:12px 0;
+            border-radius:10px;
+            font-size:16px;
+            font-weight:bold;
+            color:white;
+        }
+
+        .student{
+            background:#1f3c88;
+        }
+
+        .admin{
+            background:#39a0ed;
+        }
+
+        .btn:hover{
+            opacity:0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Result Analysis & Performance Dashboard</h1>
+        <p>Select how you want to log in</p>
+
+        <a href="/student" class="btn student">Student Login</a>
+        <a href="/admin" class="btn admin">Admin Login</a>
+    </div>
+</body>
+</html>

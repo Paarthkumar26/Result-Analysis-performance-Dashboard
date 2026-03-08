@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f7fb;
+            padding:30px;
+        }
+
+        .topbar{
+            background:#1f3c88;
+            color:white;
+            padding:20px;
+            border-radius:12px;
+            margin-bottom:25px;
+        }
+
+        .container{
+            background:white;
+            padding:25px;
+            border-radius:14px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.08);
+            max-width:750px;
+        }
+
+        h2{
+            margin-bottom:15px;
+        }
+
+        input[type="file"]{
+            margin:15px 0;
+            padding:10px;
+            width:100%;
+        }
+
+        button{
+            padding:12px 20px;
+            border:none;
+            border-radius:8px;
+            background:#1f3c88;
+            color:white;
+            cursor:pointer;
+            font-size:15px;
+        }
+
+        button:hover{
+            background:#17306d;
+        }
+
+        .note{
+            margin-top:15px;
+            color:#666;
+            font-size:14px;
+            line-height:1.6;
+        }
+
+        .message{
+            margin-bottom:18px;
+            padding:12px 14px;
+            border-radius:8px;
+            font-size:15px;
+        }
+
+        .success{
+            background:#e8f8ee;
+            color:#1e7a3d;
+            border:1px solid #b7e4c7;
+        }
+
+        .error{
+            background:#fdecec;
+            color:#b42318;
+            border:1px solid #f5c2c7;
+        }
+
+        .sample{
+            margin-top:18px;
+            background:#f8f9fc;
+            padding:14px;
+            border-radius:8px;
+            font-size:14px;
+            overflow:auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <a href="/logout" style="color:white; text-decoration:none; float:right; background:#d9534f; padding:8px 14px; border-radius:8px;">Logout</a>
+        <h1>Admin Dashboard</h1>
+        <p>Upload student result data using CSV or Excel</p>
+    </div>
+
+    <div class="container">
+        <h2>Upload Student Data</h2>
+
+        {% if message %}
+            <div class="message {{ msg_type }}">
+                {{ message }}
+            </div>
+        {% endif %}
+
+        <form action="/admin/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv,.xlsx" required>
+            <button type="submit">Upload File</button>
+        </form>
+
+        <div class="note">
+            Accepted formats: CSV, XLSX<br>
+            Required columns: student_id, name, password, cpp, java, aptitude, dsa
+        </div>
+
+        <div class="sample">
+            <strong>Sample CSV format:</strong><br><br>
+            student_id,name,password,cpp,java,aptitude,dsa<br>
+            ST101,Rahul,rahul123,78,82,70,85<br>
+            ST102,Priya,priya123,65,75,80,72
+        </div>
+    </div>
+</body>
+</html>
