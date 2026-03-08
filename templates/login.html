@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Result Dashboard Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Poppins", sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#494747,#000000);
+}
+
+.container{
+width:350px;
+padding:40px;
+border-radius:15px;
+background:rgba(0, 0, 0, 0.1);
+backdrop-filter:blur(10px);
+box-shadow:0 8px 32px rgba(157, 135, 219, 0.3);
+color:white;
+text-align:right;
+}
+
+.container h2{
+margin-bottom:20px;
+}
+
+.input-box{
+margin:15px 0;
+}
+
+.input-box input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#00c6ff;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#0072ff;
+}
+
+.footer{
+margin-top:15px;
+font-size:12px;
+opacity:0.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Result Dashboard</h2>
+
+<form method="POST" action="/login">
+
+<input type="text" name="student_id" placeholder="Student ID" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="footer">
+Student Result Analysis System
+</div>
+
+</div>
+
+</body>
+</html>
