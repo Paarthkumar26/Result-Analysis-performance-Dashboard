@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, Form, UploadFile, File
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, RedirectResponse
 from starlette.middleware.sessions import SessionMiddleware
+import os
 import mysql.connector
 import uvicorn
 
@@ -10,10 +11,11 @@ app.add_middleware(SessionMiddleware, secret_key="986892")
 templates = Jinja2Templates(directory="templates")
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Paarthkumar@986892",
-    database="result_dashboard"
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME"),
+    port=int(os.getenv("DB_PORT", 3306))
 )
 cursor = db.cursor()
 
@@ -22,6 +24,10 @@ cursor = db.cursor()
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
+
+@app.get("/student", response_class=HTMLResponse)
+def student_login_page(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
 
 
 @app.post("/login")
