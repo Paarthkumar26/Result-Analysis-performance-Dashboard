@@ -31,9 +31,7 @@ Responsible for the user interface and visualization.
 **Technologies**
 
 * HTML5
-* CSS3
-* JavaScript
-* Bootstrap / Tailwind CSS
+* CS
 * Chart.js (for graphs)
 
 **Pages**
