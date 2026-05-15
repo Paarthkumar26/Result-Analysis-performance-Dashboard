@@ -119,10 +119,10 @@ Result-Analysis-Dashboard
 │
 ├── static
 │   ├── css
-│   │   └── style.css
-│   │
-│   └── js
-│       └── script.js
+│       └── style.css
+│   
+│   
+│       
 │
 ├── database
 │   └── database.sql
