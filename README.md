@@ -175,8 +175,8 @@ Stores login credentials.
 
 | Category          | Technology            |
 | ----------------- | --------------------- |
-| Frontend          | HTML, CSS, JavaScript |
-| Backend           | Python, Flask         |
+| Frontend          | HTML, CSS             |
+| Backend           | Python, Fast API      |
 | Database          | MySQL                 |
 | Visualization     | Chart.js              |
 | Development Tools | VS Code, GitHub       |
