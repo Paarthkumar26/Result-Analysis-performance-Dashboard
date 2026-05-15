@@ -50,7 +50,7 @@ Handles authentication, data processing, and API logic.
 **Technologies**
 
 * Python
-* Flask Framework
+* Fast API
 
 **Responsibilities**
 
